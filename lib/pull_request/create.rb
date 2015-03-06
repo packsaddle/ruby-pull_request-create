@@ -2,6 +2,8 @@ require 'logger'
 require 'git'
 require 'octokit'
 
+require 'pull_request/create/client'
+require 'pull_request/create/repository'
 require 'pull_request/create/version'
 
 module PullRequest
