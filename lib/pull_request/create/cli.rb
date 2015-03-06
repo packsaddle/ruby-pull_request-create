@@ -22,7 +22,12 @@ module PullRequest
       option :title, type: :string, default: Client::TITLE
       option :body, type: :string, default: Client::BODY
       def create
+        setup_logger(options)
+
         puts 'create!'
+      rescue StandardError => e
+        suggest_messages(options)
+        raise e
       end
       default_command :create
 
@@ -45,11 +50,6 @@ module PullRequest
           logger.error ISSUE_URL
           logger.error 'options:'
           logger.error options
-        end
-
-        # http://stackoverflow.com/a/23955971/104080
-        def method_missing(method, *args)
-          self.class.start([self.class.default_command, method.to_s] + args)
         end
       end
     end
