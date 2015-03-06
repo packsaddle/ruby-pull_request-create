@@ -17,10 +17,10 @@ module PullRequest
       desc 'create', 'Create a pull request'
       option :debug, type: :boolean, default: false
       option :verbose, type: :boolean, default: false
-      option :base, type: :string, default: 'master'
+      option :base, type: :string, default: Client::BASE
       option :head, type: :string
-      option :title, type: :string, required: true
-      option :body, type: :string
+      option :title, type: :string, default: Client::TITLE
+      option :body, type: :string, default: Client::BODY
       def create
         puts 'create!'
       end

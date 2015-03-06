@@ -1,6 +1,18 @@
 module PullRequest
   module Create
     class Client
+      BASE = 'master'
+      TITLE = 'Request by PullRequest::Create'
+      BODY = ':hamster::hamster::hamster:'
+
+      def initialize(repo)
+        @repo = repo
+      end
+
+      def create_pull_request(params)
+        client.create_pull_request(repo, base, head, title, body = nil, options = {})
+      end
+
       def logger
         ::PullRequest::Create.logger
       end
