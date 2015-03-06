@@ -1,6 +1,7 @@
 require 'logger'
 require 'git'
 require 'octokit'
+require 'git_clone_url'
 
 require 'pull_request/create/client'
 require 'pull_request/create/repository'
