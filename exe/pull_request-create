@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'pull_request/create'
+require 'pull_request/create/cli'
+PullRequest::Create::CLI.start(ARGV)
