@@ -1,4 +1,4 @@
-require "pull_request/create/version"
+require 'pull_request/create/version'
 
 module PullRequest
   module Create
