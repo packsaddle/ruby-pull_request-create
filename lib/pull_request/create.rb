@@ -1,5 +1,6 @@
 require 'logger'
 require 'git'
+require 'octokit'
 
 require 'pull_request/create/version'
 
