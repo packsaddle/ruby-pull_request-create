@@ -1,3 +1,6 @@
+require 'logger'
+require 'git'
+
 require 'pull_request/create/version'
 
 module PullRequest
