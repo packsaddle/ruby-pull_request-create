@@ -15,6 +15,12 @@ module PullRequest
       end
 
       desc 'create', 'Create a pull request'
+      option :debug, type: :boolean, default: false
+      option :verbose, type: :boolean, default: false
+      option :base, type: :string, default: 'master'
+      option :head, type: :string
+      option :title, type: :string, required: true
+      option :body, type: :string
       def create
         puts 'create!'
       end
