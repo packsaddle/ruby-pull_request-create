@@ -1,5 +1,6 @@
+require 'json'
 module PullRequest
   module Create
-    VERSION = '0.1.1.beta'
+    VERSION = ::JSON.parse(File.read('./lib/pull_request/create/version.json'))['version']
   end
 end

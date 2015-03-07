@@ -2,6 +2,7 @@ require 'logger'
 require 'git'
 require 'octokit'
 require 'git_clone_url'
+require 'json'
 
 require 'pull_request/create/client'
 require 'pull_request/create/repository'
