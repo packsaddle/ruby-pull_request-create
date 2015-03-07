@@ -3,6 +3,36 @@
 [![Gem Version](http://img.shields.io/gem/v/pull_request-create.svg?style=flat)](http://badge.fury.io/rb/pull_request-create)
 [![Build Status](http://img.shields.io/travis/packsaddle/ruby-pull_request-create/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-pull_request-create)
 
+## Commands
+
+```
+Commands:
+  pull-request-create create          # Create a pull request
+  pull-request-create help [COMMAND]  # Describe available commands or one specific command
+  pull-request-create version         # Show the PullRequest::Create version
+
+Usage:
+  pull-request-create create
+
+Options:
+  [--debug], [--no-debug]
+  [--verbose], [--no-verbose]
+  [--repo=REPO]
+                               # Default: (YOUR_CURRENT_REPO_SLUG)
+  [--base=BASE]
+                               # Default: master
+  [--head=HEAD]
+                               # Default: (YOUR_CURRENT_BRANCH)
+  [--title=TITLE]
+                               # Default: Request by PullRequest::Create
+  [--body=BODY]
+                               # Default: :hamster::hamster::hamster: by <a href="https://github.com/packsaddle/ruby-pull_request-create">PullRequest::Create</a>
+
+Create a pull request
+```
+
+Requires `GITHUB_ACCESS_TOKEN`.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,10 +48,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install pull_request-create
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
