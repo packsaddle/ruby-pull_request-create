@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var conventionalChangelog = require('conventional-changelog');
+conventionalChangelog({
+  repository: 'https://github.com/packsaddle/ruby-pull_request-create',
+  version: require('../lib/pull_request/create/version.json').version,
+  file: 'CHANGELOG.md'
+}, function(err, log) {
+  fs.writeFile('CHANGELOG.md', log, function(err){
+    console.log(err);
+  });
+  console.log('Here is your changelog!', log);
+});
