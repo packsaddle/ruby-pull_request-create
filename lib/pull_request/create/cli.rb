@@ -23,8 +23,14 @@ module PullRequest
       option :body, type: :string, default: Client::BODY
       def create
         setup_logger(options)
-
-        puts 'create!'
+        params = {
+          base: options[:base],
+          head: options[:head],
+          title: options[:title],
+          body: options[:body]
+        }
+        client = Client.new(Repository.new('.'))
+        client.create_pull_request(params)
       rescue StandardError => e
         suggest_messages(options)
         raise e

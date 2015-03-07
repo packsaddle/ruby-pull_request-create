@@ -9,7 +9,7 @@ module PullRequest
         @repo = repo
       end
 
-      def create_pull_request(params)
+      def create_pull_request(_params)
         client.create_pull_request(repo, base, head, title, body = nil, options = {})
       end
 
