@@ -17,6 +17,7 @@ module PullRequest
       desc 'create', 'Create a pull request'
       option :debug, type: :boolean, default: false
       option :verbose, type: :boolean, default: false
+      option :repo, type: :string
       option :base, type: :string, default: Client::BASE
       option :head, type: :string
       option :title, type: :string, default: Client::TITLE
@@ -24,6 +25,7 @@ module PullRequest
       def create
         setup_logger(options)
         params = {
+          repo: options[:repo],
           base: options[:base],
           head: options[:head],
           title: options[:title],

@@ -16,7 +16,7 @@ module PullRequest
       def create_pull_request(params)
         logger.debug(params)
 
-        repo = decide_repo
+        repo = decide_repo(params[:repo])
         base = decide_base(params[:base])
         head = decide_head(params[:head])
         title = decide_title(params[:title])
@@ -31,8 +31,8 @@ module PullRequest
         resource
       end
 
-      def decide_repo
-        @repo.slug
+      def decide_repo(repo)
+        repo || @repo.slug
       end
 
       def decide_base(base)
