@@ -3,7 +3,11 @@ module PullRequest
     class Client
       BASE = 'master'
       TITLE = 'Request by PullRequest::Create'
-      BODY = ':hamster::hamster::hamster:'
+      BODY = <<-EOL.gsub(/^\s+/, '').gsub("\n", ' ')
+        :hamster::hamster::hamster:
+        by
+        <a href="https://github.com/packsaddle/ruby-pull_request-create">PullRequest::Create</a>
+      EOL
 
       def initialize(repo)
         @repo = repo
