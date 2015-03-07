@@ -9,8 +9,39 @@ module PullRequest
         @repo = repo
       end
 
-      def create_pull_request(_params)
-        client.create_pull_request(repo, base, head, title, body = nil, options = {})
+      def create_pull_request(params)
+        logger.debug(params)
+
+        repo = decide_repo
+        base = decide_base(params[:base])
+        head = decide_head(params[:head])
+        title = decide_title(params[:title])
+        body = decide_body(params[:body])
+        options = {}
+        logger.debug([repo, base, head, title, body, options])
+        resource = client.create_pull_request(repo, base, head, title, body, options)
+        logger.debug(resource)
+        resource
+      end
+
+      def decide_repo
+        @repo.slug
+      end
+
+      def decide_base(base)
+        base || BASE
+      end
+
+      def decide_head(head)
+        head || @repo.current_branch
+      end
+
+      def decide_title(title)
+        title || TITLE
+      end
+
+      def decide_body(body)
+        body || BODY
       end
 
       def logger
