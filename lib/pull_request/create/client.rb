@@ -25,6 +25,9 @@ module PullRequest
         logger.debug([repo, base, head, title, body, options])
         resource = client.create_pull_request(repo, base, head, title, body, options)
         logger.debug(resource)
+        logger.info("state: #{resource.state}")
+        logger.info("title: #{resource.title}")
+        logger.info("html_url: #{resource.html_url}")
         resource
       end
 
