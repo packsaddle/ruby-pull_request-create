@@ -1,5 +1,5 @@
 module PullRequest
   module Create
-    VERSION = "0.1.1.beta"
+    VERSION = "0.1.1"
   end
 end
