@@ -19,7 +19,7 @@ module PullRequest
       end
 
       def slug
-        slug_regex = %r{\A/(?<slug>.*?)(?:\.git)?\Z}
+        slug_regex = %r{\A/?(?<slug>.*?)(?:\.git)?\Z}
         remote_urls.map do |url|
           uri = GitCloneUrl.parse(url)
           match = slug_regex.match(uri.path)
