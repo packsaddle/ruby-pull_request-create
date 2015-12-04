@@ -69,6 +69,14 @@ module PullRequest
             @repository.slug == 'sanemat/sanemat.github.com'
           end
         end
+        test 'stub5 #slug' do
+          @repository.expects(:remote_urls).returns([
+            'github.com:/sanemat/sanemat.github.com.git'
+          ])
+          assert do
+            @repository.slug == 'sanemat/sanemat.github.com'
+          end
+        end
       end
     end
   end

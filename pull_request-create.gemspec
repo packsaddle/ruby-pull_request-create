@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'thor'
   spec.add_runtime_dependency 'git'
   spec.add_runtime_dependency 'octokit'
-  spec.add_runtime_dependency 'git_clone_url', '>= 1.0', '< 2.0'
+  spec.add_runtime_dependency 'git_clone_url', '>= 2.0.pre', '< 3.0'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
