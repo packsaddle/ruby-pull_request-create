@@ -1,3 +1,8 @@
+### 1.0.1 (2017-01-02)
+
+* Require ruby 2.0
+
+
 ## 1.0.0 (2017-01-01)
 
 * Drop support for ruby 1.9
